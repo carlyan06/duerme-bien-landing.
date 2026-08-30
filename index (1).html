@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Duerme Bien Aunque Trabajes de Noche — Kit para trabajadores por turnos</title>
+<meta name="description" content="Guía práctica + herramientas de sueño para enfermeras, guardias, choferes y todo trabajador con horario nocturno o rotativo.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,500&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --navy:#16324A;
+    --navy-deep:#0E2233;
+    --amber:#E2A63B;
+    --amber-deep:#C98A22;
+    --paper:#F7F5F1;
+    --ink:#23201C;
+    --ink-soft:#54504A;
+    --line:#E4DFD6;
+    --white:#FFFFFF;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Work Sans', sans-serif;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{
+    font-family:'Lora', serif;
+    margin:0;
+    color:var(--navy);
+    font-weight:600;
+  }
+  p{margin:0;}
+  a{color:inherit;}
+  img,svg{display:block;max-width:100%;}
+  .wrap{max-width:760px;margin:0 auto;padding:0 24px;}
+  .eyebrow{
+    font-size:14px;
+    color:var(--amber);
+    font-weight:600;
+    margin-bottom:14px;
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    background:radial-gradient(ellipse at 70% 15%, #1c3d59 0%, var(--navy) 45%, var(--navy-deep) 100%);
+    color:var(--white);
+    padding:76px 0 96px;
+    overflow:hidden;
+  }
+  .hero .wrap{position:relative;z-index:2;}
+  .hero-stars{position:absolute;inset:0;z-index:1;opacity:0.65;}
+  .hero h1{
+    color:var(--white);
+    font-size:clamp(32px,5.5vw,48px);
+    line-height:1.18;
+    max-width:14ch;
+  }
+  .hero .sub{
+    margin-top:20px;
+    font-size:18px;
+    color:#CBD9E3;
+    max-width:46ch;
+  }
+  .hero-cta{margin-top:34px;display:flex;flex-direction:column;gap:10px;align-items:flex-start;}
+  .btn{
+    display:inline-block;
+    background:var(--amber);
+    color:var(--navy-deep);
+    font-weight:700;
+    font-size:17px;
+    padding:16px 30px;
+    border-radius:6px;
+    text-decoration:none;
+    border:none;
+    cursor:pointer;
+    transition:background .15s ease, transform .15s ease;
+  }
+  .btn:hover{background:var(--amber-deep);transform:translateY(-1px);}
+  .hero-note{font-size:13.5px;color:#9FB3C2;}
+
+  /* ---------- PROBLEMA ---------- */
+  .section{padding:64px 0;}
+  .section.alt{background:var(--white);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .lede{
+    font-size:20px;
+    color:var(--navy);
+    font-family:'Lora',serif;
+    font-style:italic;
+    max-width:38ch;
+    margin-bottom:22px;
+  }
+  .body-text{font-size:16.5px;color:var(--ink-soft);max-width:60ch;}
+  .body-text + .body-text{margin-top:14px;}
+
+  /* ---------- 3 PASOS ---------- */
+  .steps{display:flex;gap:20px;margin-top:40px;flex-wrap:wrap;}
+  .step{flex:1;min-width:190px;}
+  .step-num{
+    width:38px;height:38px;border-radius:50%;
+    background:var(--navy);color:var(--white);
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Lora',serif;font-weight:600;font-size:16px;
+    margin-bottom:14px;
+  }
+  .step:nth-child(2) .step-num{background:var(--amber-deep);}
+  .step:nth-child(3) .step-num{background:var(--navy-deep);}
+  .step h3{font-size:17px;margin-bottom:6px;}
+  .step p{font-size:14.5px;color:var(--ink-soft);}
+
+  /* ---------- QUE INCLUYE ---------- */
+  .kit-item{
+    display:flex;gap:18px;
+    padding:22px 0;
+    border-bottom:1px solid var(--line);
+  }
+  .kit-item:first-child{padding-top:0;}
+  .kit-item:last-child{border-bottom:none;}
+  .kit-num{
+    font-family:'Lora',serif;font-weight:600;color:var(--amber-deep);
+    font-size:15px;min-width:26px;
+  }
+  .kit-item h3{font-size:18px;margin-bottom:4px;}
+  .kit-item.main h3{font-size:21px;}
+  .kit-item p{font-size:15px;color:var(--ink-soft);}
+
+  /* ---------- DIFERENCIA ---------- */
+  .diff-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:36px;border:1px solid var(--line);border-radius:8px;overflow:hidden;}
+  .diff-col{padding:26px 24px;}
+  .diff-col.no{background:#FBF4EC;}
+  .diff-col.yes{background:#EEF3F0;}
+  .diff-col h3{font-size:15px;margin-bottom:14px;}
+  .diff-col.no h3{color:#96541F;}
+  .diff-col.yes h3{color:#2E5A44;}
+  .diff-col ul{margin:0;padding-left:18px;font-size:14.5px;color:var(--ink-soft);}
+  .diff-col li{margin-bottom:8px;}
+  @media (max-width:600px){.diff-grid{grid-template-columns:1fr;}}
+
+  /* ---------- PRECIO ---------- */
+  .price-box{
+    background:var(--navy);
+    color:var(--white);
+    border-radius:12px;
+    padding:40px 32px;
+    text-align:center;
+    margin-top:10px;
+  }
+  .price-box .amount{
+    font-family:'Lora',serif;
+    font-size:44px;
+    font-weight:700;
+    margin:10px 0 4px;
+  }
+  .price-box .amount span{font-size:20px;font-weight:500;color:#9FB3C2;text-decoration:line-through;margin-right:10px;}
+  .price-box .btn{margin-top:20px;width:100%;max-width:320px;text-align:center;}
+  .guarantee{
+    display:flex;gap:10px;align-items:flex-start;
+    margin-top:22px;font-size:13.5px;color:#CBD9E3;
+    max-width:400px;margin-left:auto;margin-right:auto;
+    text-align:left;
+  }
+
+  /* ---------- FAQ ---------- */
+  .faq-item{border-bottom:1px solid var(--line);padding:20px 0;}
+  .faq-item:first-child{padding-top:0;}
+  .faq-item h3{font-size:16.5px;margin-bottom:8px;font-family:'Work Sans',sans-serif;font-weight:600;}
+  .faq-item p{font-size:15px;color:var(--ink-soft);}
+
+  /* ---------- FOOTER ---------- */
+  footer{background:var(--navy-deep);color:#8CA0AF;padding:40px 0;font-size:13px;}
+  footer .wrap{display:flex;flex-direction:column;gap:10px;}
+  footer a{color:#B7C7D1;}
+
+  /* ---------- STICKY MOBILE CTA ---------- */
+  .sticky-cta{
+    display:none;
+    position:fixed;bottom:0;left:0;right:0;
+    background:var(--white);
+    border-top:1px solid var(--line);
+    padding:12px 16px;
+    z-index:50;
+    box-shadow:0 -4px 16px rgba(0,0,0,.08);
+  }
+  .sticky-cta .btn{width:100%;text-align:center;}
+  @media (max-width:640px){
+    .sticky-cta{display:block;}
+    body{padding-bottom:74px;}
+  }
+
+  /* ---------- IMAGINA ---------- */
+  .imagine{
+    background:var(--navy-deep);color:var(--white);
+    border-radius:12px;padding:34px 30px;margin-top:36px;
+  }
+  .imagine p{color:#CBD9E3;font-size:16px;}
+  .imagine p + p{margin-top:12px;}
+  .imagine .quote-mark{font-family:'Lora',serif;font-size:40px;color:var(--amber);line-height:1;margin-bottom:6px;}
+
+  /* ---------- QUIEN NO ES / VALUE STACK ---------- */
+  .stack-list{list-style:none;margin:26px 0 0;padding:0;}
+  .stack-list li{
+    display:flex;justify-content:space-between;gap:16px;
+    padding:12px 0;border-bottom:1px dashed var(--line);
+    font-size:15px;color:var(--ink-soft);
+  }
+  .stack-list li b{color:var(--ink);font-weight:600;}
+  .stack-total{
+    display:flex;justify-content:space-between;
+    padding-top:16px;font-family:'Lora',serif;font-weight:700;font-size:18px;color:var(--navy);
+  }
+  .notfor{
+    background:#FBF4EC;border:1px solid #ECD9BE;border-radius:10px;
+    padding:22px 24px;margin-top:34px;
+  }
+  .notfor h3{font-size:15px;color:#96541F;margin-bottom:10px;}
+  .notfor ul{margin:0;padding-left:18px;font-size:14.5px;color:var(--ink-soft);}
+  .notfor li{margin-bottom:6px;}
+
+</style>
+</head>
+<body>
+
+<!-- ======================================================
+     META PIXEL — Pixel ID de Carlos ya configurado (1088625554821350)
+     (Meta Events Manager > Orígenes de datos > tu píxel)
+     ====================================================== -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1088625554821350');
+fbq('track', 'PageView');
+fbq('track', 'ViewContent', {
+  content_name: 'Kit Duerme Bien - Trabajo Nocturno',
+  content_category: 'Ebook + herramientas',
+  value: 9.99,
+  currency: 'USD'
+});
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1088625554821350&ev=PageView&noscript=1"/></noscript>
+
+<!-- ======================================================
+     Reemplaza este link por tu link real de checkout de Hotmart
+     ====================================================== -->
+<script>
+  const HOTMART_CHECKOUT_URL = "https://pay.hotmart.com/B107395789T?checkoutMode=10";
+  function irACheckout(origen){
+    if (typeof fbq === 'function') {
+      fbq('track', 'InitiateCheckout', {
+        content_name: 'Kit Duerme Bien - Trabajo Nocturno',
+        value: 9.99,
+        currency: 'USD'
+      });
+    }
+    window.location.href = HOTMART_CHECKOUT_URL;
+  }
+</script>
+
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <svg class="hero-stars" viewBox="0 0 800 500" preserveAspectRatio="xMidYMid slice">
+    <circle cx="120" cy="80" r="1.6" fill="#fff"/>
+    <circle cx="220" cy="160" r="1.2" fill="#fff"/>
+    <circle cx="80" cy="220" r="1.4" fill="#fff"/>
+    <circle cx="300" cy="60" r="1.1" fill="#fff"/>
+    <circle cx="400" cy="140" r="1.5" fill="#fff"/>
+    <circle cx="60" cy="340" r="1.2" fill="#fff"/>
+    <circle cx="250" cy="300" r="1.3" fill="#fff"/>
+    <circle cx="180" cy="400" r="1" fill="#fff"/>
+    <g transform="translate(640,90)">
+      <circle cx="0" cy="0" r="46" fill="#E2A63B"/>
+      <circle cx="16" cy="-10" r="44" fill="#0E2233"/>
+    </g>
+    <circle cx="700" cy="220" r="1.5" fill="#fff"/>
+    <circle cx="600" cy="260" r="1.1" fill="#fff"/>
+    <circle cx="740" cy="120" r="1.3" fill="#fff"/>
+    <circle cx="520" cy="60" r="1" fill="#fff"/>
+  </svg>
+  <div class="wrap">
+    <div class="eyebrow">Para enfermeras, guardias, choferes y todo trabajador nocturno</div>
+    <h1>Tu cuerpo no está roto. Tu horario le está pidiendo algo imposible.</h1>
+    <p class="sub">Duermes 4-5 horas de mala calidad, te despiertas más cansado que antes de acostarte, y cada consejo de sueño que encuentras asume que trabajas de día. Esta guía no.</p>
+    <div class="hero-cta">
+      <button class="btn" onclick="irACheckout('hero')">Quiero dormir mejor — $9.99</button>
+      <span class="hero-note">Acceso inmediato · 5 herramientas · Garantía de 7 días</span>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PROBLEMA ================= -->
+<section class="section">
+  <div class="wrap">
+    <p class="lede">Son las 3 de la tarde. Deberías estar durmiendo. El vecino está cortando el césped.</p>
+    <p class="body-text">Llegaste a casa con el sol ya arriba, te acostaste con la casa despierta a tu alrededor, y dos horas después te despertaste sin haber descansado nada. Esa noche vuelves al turno arrastrando el cansancio del día anterior — y así se repite la semana.</p>
+    <p class="body-text">Has probado de todo: bajar las persianas, tomar más café, acostarte "más temprano". Nada funciona del todo porque ningún consejo que has leído fue escrito para alguien que duerme de día. Todos asumen que el problema es tu disciplina. El problema real es que tu horario y tu biología están en guerra — y hasta ahora nadie te había dado un manual para ganar esa guerra.</p>
+
+    <div class="imagine">
+      <div class="quote-mark">"</div>
+      <p>Imagina llegar a casa después del turno, oscurecer el cuarto en dos minutos porque ya sabes exactamente qué hacer, dormir un bloque real de sueño profundo, y despertar sintiendo que sí descansaste — no solo que "pasaron las horas".</p>
+      <p>Eso es lo que cambia cuando dejas de improvisar y sigues un método hecho específicamente para tu horario.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 3 PASOS ================= -->
+<section class="section alt">
+  <div class="wrap">
+    <h2 style="font-size:26px;max-width:20ch;">Un método organizado en el orden en que realmente vives tu turno</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h3>Antes del turno</h3>
+        <p>Siesta estratégica y luz brillante para llegar alerta, sin sacrificar el sueño de después.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h3>Durante el turno</h3>
+        <p>Cómo cronometrar la cafeína y las siestas cortas para rendir sin arruinar el descanso posterior.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h3>Después del turno</h3>
+        <p>La rutina exacta para lograr sueño profundo de día, contra la luz y el ruido del mundo despierto.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= QUE INCLUYE ================= -->
+<section class="section">
+  <div class="wrap">
+    <h2 style="font-size:26px;">Qué recibes hoy mismo</h2>
+    <div style="margin-top:30px;">
+      <div class="kit-item main">
+        <div class="kit-num">01</div>
+        <div>
+          <h3>Guía completa "Duerme Bien Aunque Trabajes de Noche"</h3>
+          <p>18 páginas con el método exacto: antes, durante y después del turno, plan de 7 días, y qué hacer si tu horario rota cada semana. Sabrás qué hacer hoy mismo, no en teoría.</p>
+        </div>
+      </div>
+      <div class="kit-item">
+        <div class="kit-num">02</div>
+        <div>
+          <h3>Hoja de referencia rápida</h3>
+          <p>Pégala donde la veas y deja de tener que recordar todo — la sigues sin pensar.</p>
+        </div>
+      </div>
+      <div class="kit-item">
+        <div class="kit-num">03</div>
+        <div>
+          <h3>Rastreador de sueño en Excel</h3>
+          <p>Ve en un gráfico si de verdad estás durmiendo mejor semana a semana, no adivines.</p>
+        </div>
+      </div>
+      <div class="kit-item">
+        <div class="kit-num">04</div>
+        <div>
+          <h3>Guía para tu familia</h3>
+          <p>Para que dejen de interrumpirte sin querer y entiendan por qué tu sueño de día importa tanto como el de ellos de noche.</p>
+        </div>
+      </div>
+      <div class="kit-item">
+        <div class="kit-num">05</div>
+        <div>
+          <h3>Script para negociar turnos con tu jefe</h3>
+          <p>Las frases exactas para pedir mejor rotación o más aviso previo, sin que suene a queja.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= DIFERENCIA ================= -->
+<section class="section alt">
+  <div class="wrap">
+    <h2 style="font-size:26px;max-width:24ch;">Esto no es otro artículo de "10 consejos para dormir mejor"</h2>
+    <div class="diff-grid">
+      <div class="diff-col no">
+        <h3>Lo que ya intentaste</h3>
+        <ul>
+          <li>Consejos escritos para quien duerme de noche</li>
+          <li>Nada sobre la luz del camino a casa</li>
+          <li>Silencio total sobre qué hacer cuando el turno rota</li>
+        </ul>
+      </div>
+      <div class="diff-col yes">
+        <h3>Este kit</h3>
+        <ul>
+          <li>Organizado por antes / durante / después de TU turno</li>
+          <li>Estrategia específica para lograr sueño profundo de día</li>
+          <li>Un capítulo entero para horarios rotativos e irregulares</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= VALUE STACK + PARA QUIÉN NO ES ================= -->
+<section class="section">
+  <div class="wrap">
+    <h2 style="font-size:26px;">Todo lo que llevas por $9.99</h2>
+    <ul class="stack-list">
+      <li><span>Guía completa (18 páginas) con el método paso a paso</span> <b>Incluido</b></li>
+      <li><span>Hoja de referencia rápida para imprimir</span> <b>Incluido</b></li>
+      <li><span>Rastreador de sueño en Excel con gráfico automático</span> <b>Incluido</b></li>
+      <li><span>Guía para tu familia</span> <b>Incluido</b></li>
+      <li><span>Script para negociar turnos con tu jefe</span> <b>Incluido</b></li>
+    </ul>
+    <div class="stack-total"><span>Precio del kit completo</span><span>$9.99</span></div>
+    <p class="body-text" style="margin-top:16px;">Menos de lo que cuesta una entrega a domicilio — por algo que puede cambiar cómo te sientes cada día que trabajas.</p>
+
+    <div class="notfor">
+      <h3>Esto NO es para ti si...</h3>
+      <ul>
+        <li>Buscas un diagnóstico médico — esto es educativo, no un tratamiento.</li>
+        <li>Trabajas horario de oficina normal — este kit está hecho específicamente para turno nocturno o rotativo.</li>
+        <li>Esperas dormir exactamente igual que alguien con horario de día — te ayuda a dormir mejor de lo que duermes ahora, no promete lo imposible.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PRECIO ================= -->
+<section class="section">
+  <div class="wrap">
+    <div class="price-box">
+      <div class="eyebrow" style="color:#E2A63B;">Kit completo · 5 herramientas</div>
+      <div class="amount">$9.99</div>
+      <p style="color:#CBD9E3;font-size:14.5px;">Pago único · Acceso inmediato · Sin suscripción</p>
+      <button class="btn" onclick="irACheckout('precio')">Quiero dormir mejor</button>
+      <div class="guarantee">
+        <span>🔒</span>
+        <span>Garantía de 7 días sin preguntas. Si no te sirve, te devolvemos el pago — sin letra pequeña.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section class="section alt">
+  <div class="wrap">
+    <h2 style="font-size:26px;">Preguntas frecuentes</h2>
+    <div style="margin-top:26px;">
+      <div class="faq-item">
+        <h3>¿Realmente va a funcionar para mí?</h3>
+        <p>No hay una solución mágica ni promesas exageradas: es un método basado en cómo funciona tu reloj biológico, aplicado a tu horario específico. Si lo aplicas, vas a dormir mejor de lo que duermes ahora — y si no, tienes garantía.</p>
+      </div>
+      <div class="faq-item">
+        <h3>¿Es seguro pagar aquí?</h3>
+        <p>El pago se procesa por Hotmart, una plataforma internacional de venta de productos digitales — nosotros no vemos ni guardamos los datos de tu tarjeta.</p>
+      </div>
+      <div class="faq-item">
+        <h3>¿Cómo recibo el kit?</h3>
+        <p>Apenas completas el pago, Hotmart te da acceso inmediato a los 5 archivos. No hay envío físico ni espera.</p>
+      </div>
+      <div class="faq-item">
+        <h3>¿Reemplaza a un médico?</h3>
+        <p>No. Es una guía educativa basada en principios de cronobiología ampliamente documentados. Si tienes somnolencia extrema o sospechas un trastorno del sueño, consulta a un profesional de salud.</p>
+      </div>
+      <div class="faq-item">
+        <h3>¿Sirve si mi horario cambia cada semana, no es turno fijo?</h3>
+        <p>Sí — hay un capítulo específico para horarios rotativos e irregulares, con una estrategia distinta a la de turno fijo.</p>
+      </div>
+      <div class="faq-item">
+        <h3>¿Qué pasa si no me sirve?</h3>
+        <p>Tienes 7 días de garantía sin preguntas, gestionada directamente desde Hotmart. El riesgo es nuestro, no tuyo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>Guía educativa. No reemplaza el consejo, diagnóstico o tratamiento de un profesional de la salud.</p>
+    <p>Compra procesada de forma segura por Hotmart.</p>
+    <p>© 2026 — Todos los derechos reservados.</p>
+  </div>
+</footer>
+
+<div class="sticky-cta">
+  <button class="btn" onclick="irACheckout('sticky')">Quiero dormir mejor — $9.99</button>
+</div>
+
+</body>
+</html>
